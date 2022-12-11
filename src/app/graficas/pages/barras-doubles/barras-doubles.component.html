@@ -10,13 +10,13 @@
 
         <div class="grid grid-cols-2 divide-x mt-5">
           <div>
-            <app-grafica-barra></app-grafica-barra>
+            <app-grafica-barra [horizontal]="true" [barChartData]="productoData"></app-grafica-barra>
           </div>
           <div>
-            <app-grafica-barra></app-grafica-barra>
+            <app-grafica-barra [barChartData]="proveedoresData"></app-grafica-barra>
 
           </div>
-       
+
         </div>
 
 
