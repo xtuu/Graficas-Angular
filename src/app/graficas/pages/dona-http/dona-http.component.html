@@ -1,15 +1,31 @@
-
 <main class="flex-1">
-    <div class="py-6">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-        <h1 class="text-2xl font-semibold text-gray-900">Donas http</h1>
-      </div>
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-        <!-- Replace with your content -->
-        <div class="py-4">
-          <div class="h-96 rounded-lg border-4 border-dashed border-gray-200"></div>
-        </div>
-        <!-- /End replace -->
-      </div>
+  <div class="py-6">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+      <h1 class="text-2xl font-semibold text-gray-900">Redes sociales mas usadas</h1>
     </div>
-  </main>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+
+
+      <div class="py-4">
+        <div *ngIf="doughnutChartData.datasets.length === 0; else divGrafica"
+          class="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-blue-600 rounded-full">
+        </div>
+
+        <ng-template #divGrafica>
+
+          <canvas baseChart class="chart" [data]="doughnutChartData" [type]="doughnutChartType">
+          </canvas>
+
+        </ng-template>
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</main>
