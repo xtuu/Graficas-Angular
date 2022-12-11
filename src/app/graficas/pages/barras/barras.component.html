@@ -7,9 +7,21 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
         <!-- Replace with your content -->
         <div class="py-4">
-          <div class="h-96 rounded-lg border-4 border-dashed border-gray-200"></div>
+          <canvas baseChart class="chart"
+          [data]="barChartData"
+          [options]="barChartOptions"
+          [type]="barChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"
+          >
+</canvas>
+
+<button  (click)="randomize()">Update</button>
         </div>
         <!-- /End replace -->
+
+       
+
       </div>
     </div>
   </main>
