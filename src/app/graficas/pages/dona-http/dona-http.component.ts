@@ -36,18 +36,26 @@ export class DonaHttpComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.graficaService.getDataRedesSociales()
-      .subscribe(data => {
 
-        const labels = Object.keys(data)
+    this.graficaService.getDataRedesSocialesDona()
+      .subscribe(({ labels, values }) => {
         labels.forEach(label => {
           this.doughnutChartLabels.push(label)
         })
-
-        const values = Object.values(data)
         this.doughnutChartData.datasets.push({ data: values })
-        // console.log(values)
+
       })
+
+    // this.graficaService.getDataRedesSociales()
+    //   .subscribe(data => {
+    //     const labels = Object.keys(data)
+    //     labels.forEach(label => {
+    //       this.doughnutChartLabels.push(label)
+    //     })
+
+    //     const values = Object.values(data)
+    //     this.doughnutChartData.datasets.push({ data: values })
+    //   })
   }
 
 
